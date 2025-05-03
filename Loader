@@ -1,0 +1,13 @@
+local placeId = game.PlaceId
+
+local url = "https://raw.githubusercontent.com/redspicious/Veil/refs/heads/main/" .. placeId
+
+local success, result = pcall(function()
+	return game:HttpGet(url)
+end)
+
+if success then
+	loadstring(result)()
+else
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/redspicious/Veil/refs/heads/main/Unsupported"))()
+end
